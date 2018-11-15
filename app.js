@@ -19,7 +19,7 @@ let all = fs.readFileSync("./All_Station.txt",'utf8');
 let stations= [];
 let csvData = []
 let spots = {};
-let stationsLocatestationsLocate = [];
+
 all.split(/\n/).forEach(line=>{
   let temp = line.split("_");
   stations.push({
@@ -75,7 +75,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get("/dataStation",function(req,res,next){
   let station = req.query.station;
-  console.log(station);
   let temp = ""
   stations.forEach(dict=>{
     if(dict[station]!=undefined){
