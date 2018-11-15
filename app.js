@@ -73,8 +73,9 @@ app.all('*', (req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.get("/dataStation",function(req,res,next){
-  let station = req.query.station;
+app.post("/dataStation",function(req,res,next){
+  let station = req.body.station;
+  console.log(station)
   let temp = ""
   stations.forEach(dict=>{
     if(dict[station]!=undefined){
